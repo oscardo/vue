@@ -11,6 +11,7 @@
 <script lang="ts" setup>
 
 import { GoogleAuthProvider, signInWithPopup, getAuth } from 'firebase/auth'
+
 let auth = getAuth();
 
 const googleProvider = new GoogleAuthProvider();

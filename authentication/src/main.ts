@@ -4,6 +4,8 @@ import router from './router'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap'
 
+import VueCookies  from 'vue-cookies'
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 
@@ -22,4 +24,13 @@ const firebaseConfig = {
   // Initialize Firebase
   initializeApp(firebaseConfig);
 
-createApp(App).use(router).mount('#app')
+const app = createApp(App).use(router)
+app.use(VueCookies, { expires: '1d'})
+app.mount('#app')
+
+//$cookies.set('auth', 1000, expires, path, domain, secure, sameSite) //setear o guardar
+//$cookies.get('auth') //conseguir la cookie
+//$cookies.remove('auth') //si sale
+//$cookies.isKey('auth') //si existe
+//$cookies.Keys() //consigue todas las cookies creadas
+
