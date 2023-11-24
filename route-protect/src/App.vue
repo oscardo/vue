@@ -1,30 +1,28 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+<div>
+  <!-- 
+    <input type="text" v-model="note"/>  
+  <button @click="sendToServer">Enviar nota al servidor</button> 
+-->
+<router-view></router-view>
+</div>
 </template>
+<script lang="ts" setup>
+import { ref } from 'vue';
+let note = ref('')
+const sendToServer = async() => {
+  const rawResponse = await fetch('https://xxxxxxxxxxx', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': 'Bearer YYYYYYYYYYYYY' /*, store.JWS <any>*/
+    },
+    body: JSON.stringify({
+      note: note.value
+    })
+  })
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  const response = await rawResponse.json()
 }
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+</script>

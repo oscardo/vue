@@ -2,7 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import LoginView from '../views/LoginView.vue'
-import DashboardView from '../views/DashboardView.vue'
+import AccessView from '../views/AccessView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -22,7 +22,7 @@ const routes: Array<RouteRecordRaw> = [
     }
   },
   {
-    path: '/Login',
+    path: '/login',
     name: 'login',
     component: LoginView,
     meta: {
@@ -30,16 +30,14 @@ const routes: Array<RouteRecordRaw> = [
     }
   },
   {
-    path: '/Dashboard',
-    name: 'dashboard',
-    component: DashboardView,
+    path: '/Access',
+    name: 'access',
+    component: AccessView,
     meta: {
-      requiereAuth: true,
-      role: 'admin'
+      requiereAuth: true
     }
-  }
+  },
 ]
-
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -59,4 +57,3 @@ router.beforeEach((to, from, next) => {
 })
 
 export default router
-

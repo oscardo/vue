@@ -30,7 +30,6 @@ const authUser = async () => {
     .catch((error) => {
         alert("Error" + error.message)
     })
-
 }
 </script>
 <style scoped>

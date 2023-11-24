@@ -32,6 +32,8 @@ const authUser = async () => {
     alert('Fracaso!!!')
   }
 }
+
+
 </script>
 <style scoped>
     
