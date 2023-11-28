@@ -16,6 +16,7 @@ private o #
 //otra forma más general seria esta:
 class User {
     private _courseCount = 1;
+    protected _courseCount_Probar = 2 
     constructor(public email:string, public name: string){ 
         
     }
@@ -33,6 +34,16 @@ class User {
             throw new Error("Course count should be more than 1")
         }
         this._courseCount = CourseNum;
+    }
+}
+
+class subUser extends User{
+    isFamily: boolean = true;
+    //private _courseCount = 1; NO se puede acceder a este tipo de objeto YA que es privado
+    changeCourseCount(){
+        //this._courseCount = 1; marca error
+        //mientras que este SI lo permte
+        this._courseCount_Probar = 2 
     }
 }
 
