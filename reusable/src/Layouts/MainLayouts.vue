@@ -24,9 +24,9 @@
     <script lang="ts" setup>
     import AuxBar from '../components/AuxBar.vue';
     import MenuSideBar from '../components/MenuSidebar.vue';
-    import useMove from '../composable/useMouse'
+    import useMove from '../composable/useMouse';
     
-      const { x, y} = useMove()
+      const { x, y} = useMove();
     </script>
     <style scoped>
     
