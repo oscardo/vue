@@ -4,7 +4,15 @@
     <router-link to="/about">About</router-link>
   </nav>
   <router-view/>
+  <h2>$count</h2>
+  <button @click="$sayHello()">deme cliiiiick!!!!!!!!!!!!! Say Hello</button>
+  <br>
+  <button @click="$sayHelloWith()">deme cliiiiick!!!!!!!!!!!!! With</button>
 </template>
+
+<script lang="ts" setup>
+
+</script>
 
 <style>
 #app {
@@ -16,6 +24,7 @@
 }
 
 nav {
+
   padding: 30px;
 }
 

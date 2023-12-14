@@ -12,3 +12,4 @@ app.use(usePinia)
 app.use(router).mount('#app')
     
 //npm i pinia-plugin-persistedstate
+
